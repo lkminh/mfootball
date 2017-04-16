@@ -1,0 +1,26 @@
+{
+  "name": "MFootball",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:server": "rm -rf ./build && ./node_modules/.bin/webpack --config webpack.config.server.js",
+    "start:client": "./node_modules/.bin/webpack-dev-server --config webpack.config.client.js",
+    "start": "rm -rf ./.build && ./node_modules/.bin/npm-run-all --parallel start:server start:client"
+  },
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.15.2",
+    "npm-run-all": "^4.0.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "next",
+    "start-server-webpack-plugin": "^2.2.0",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-node-externals": "^1.5.4"
+  }
+}
