@@ -26,7 +26,7 @@ app.get('*', (req,res) => {
     request(options, (error, response, body) => {
         const initialState = {
             isFetching: false,
-            competitions: COMPETITIONS
+            competitions: JSON.parse(body)
         };
 
         const store = configureStore(initialState);
