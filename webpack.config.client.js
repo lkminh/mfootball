@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
     devtool: 'inline-source-map',
     entry: [
@@ -17,6 +19,9 @@ module.exports = {
                 path.join(__dirname, 'client'),
                 path.join(__dirname, 'common')
             ]
+        }, {
+            test: /\.css/,
+            loader: ExtractTextPlugin.extract("css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]")
         }]
     },
     plugins: [
@@ -27,7 +32,8 @@ module.exports = {
             "process.env": {
                 "BUILD_TARGET": JSON.stringify("client")
             }
-        })
+        }),
+        new ExtractTextPlugin("styles.css")
     ],
     devServer: {
         host: 'localhost',
