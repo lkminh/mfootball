@@ -20,8 +20,11 @@ module.exports = {
                 path.join(__dirname, 'common')
             ]
         }, {
-            test: /\.css/,
-            loader: ExtractTextPlugin.extract("css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]")
+            test: /\.scss/,
+            loader: ExtractTextPlugin.extract("css-loader!sass-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]")
+        }, {
+            test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+            loader: 'url-loader?limit=100000'
         }]
     },
     plugins: [

@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import CompetitionsView from "./components/competitionsView/CompetitionsView"
 import Loader from './components/loader/Loader'
 import {fetchCompetitions} from './store/competition'
-
+import styles from './App.scss'
 
 
 class App extends React.Component {

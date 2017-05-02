@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Loader.css'
+import styles from './Loader.scss'
 const Loader = () => (
     <div className={styles.loader} >
         <svg viewBox="0 0 32 32" width="32" height="32">
