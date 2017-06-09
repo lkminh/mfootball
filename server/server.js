@@ -23,9 +23,10 @@ app.get('*', (req,res) => {
         }
     };
 
-    // request(options, (error, response, body) => {
+    request(options, (error, response, body) => {
+        console.log(JSON.stringify(body));
         const initialState = {
-            isFetching: false,
+            isFetching: true,
             competitions: []
         };
 
@@ -38,7 +39,7 @@ app.get('*', (req,res) => {
         );
         const finalState = store.getState();
         res.send(renderFullPage(html, finalState))
-    // });
+    });
 });
 
 function renderFullPage(html, preloadedState) {

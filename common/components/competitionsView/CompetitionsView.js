@@ -15,10 +15,11 @@ export default class CompetitionsView extends React.Component {
     render() {
         let competitions = this.props.competitions;
         return (
-            <div>
+            <div className="container">
                 {
                     competitions.map((competition) => {
                         return <CompetitionItem
+                            className="col-lg-3 col-md-4 col-sm-6"
                             competition={competition}
                             key={competition.id}
                             onClick={() => this.onClickCompetition(competition.id)}/>

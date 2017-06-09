@@ -11,9 +11,9 @@ import styles from './App.scss'
 
 class App extends React.Component {
 
-    // componentDidMount() {
-    //     this.props.dispatch(fetchCompetitions());
-    // }
+    componentDidMount() {
+        this.props.dispatch(fetchCompetitions());
+    }
 
     render() {
         let content = this.props.isFetching ? <Loader/> : <CompetitionsView competitions={this.props.competitions}/>;
