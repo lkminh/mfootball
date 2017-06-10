@@ -2,6 +2,7 @@
  * Created by minhluong on 4/17/17.
  */
 import { combineReducers } from 'redux'
+import cachedFetch from '../utils/cachedFetch'
 const REQUEST_COMPETITIONS = "REQUEST_COMPETITIONS";
 export function requestCompetitions() {
     return {
@@ -30,7 +31,7 @@ export function fetchCompetitions() {
             dataType: 'json'
         };
         let url = 'http://api.football-data.org/v1/competitions';
-        return fetch(url, init)
+        return cachedFetch(url, init)
             .then(res => res.json())
             .then(resJson => dispatch(receiveCompetitions(resJson)));
     };
